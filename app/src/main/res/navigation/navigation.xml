@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/titleFragment2">
+    app:startDestination="@id/titleFragment">
 
     <fragment
-        android:id="@+id/titleFragment2"
+        android:id="@+id/titleFragment"
         android:name="com.example.android.navigation.TitleFragment"
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
@@ -18,9 +18,16 @@
         android:id="@+id/gameFragment"
         android:name="com.example.android.navigation.GameFragment"
         android:label="GameFragment"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment2"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment"
+            app:destination="@id/gameWonFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/gameOverFragment2"
+        android:id="@+id/gameOverFragment"
         android:name="com.example.android.navigation.GameOverFragment"
         android:label="fragment_game_over"
         tools:layout="@layout/fragment_game_over" />
